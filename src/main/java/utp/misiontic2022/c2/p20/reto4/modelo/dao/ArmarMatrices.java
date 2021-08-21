@@ -16,25 +16,18 @@ public class ArmarMatrices extends VistaRequerimientosReto4{
     public static ControladorRequerimientos controlador = new ControladorRequerimientos();
 
     public String[][] listar_1() throws SQLException {
-        String[][] matriz1 = { { "nombre", "Ap1", "ape2", "98" } };
+        String[][] matriz1 = { { "nombre", "Apellido1", "apellido2", "98" } };
         try {
-            // Conocer el nombre, apellidos y salarios de los lideres cuyo segundo apellido
-            // sea ‘Ortiz’
             ArrayList<Requerimiento_1> punto_1 = controlador.consultarRequerimiento1();
 
-            // System.out.println("Nombre Primer_Apellido Segundo_Apellido Salario");
             matriz1 = new String[punto_1.size()][4];
             int i = 0;
             for (Requerimiento_1 q1 : punto_1) {
-             /*    System.out.printf("%s %s %s %6.1f %n", q1.getNombre(),
-                 q1.getPrimer_Apellido(), q1.getSegundo_Apellido(),
-                 (double)q1.getSalario());
-                 */
+
                 matriz1[i][0] = q1.getNombre();
                 matriz1[i][1] = q1.getPrimer_Apellido();
                 matriz1[i][2] = q1.getSegundo_Apellido();
                 matriz1[i++][3] = Integer.toString(q1.getSalario());
-             //   System.out.println(matriz1[i-1][0]+" "+ matriz1[i-1][1]+" "+matriz1[i-1][2]);
             }
 
         } catch (Exception e) {
